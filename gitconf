@@ -1,0 +1,14 @@
+[diff]
+   tool = vimdiff
+
+[difftool]
+      prompt = false
+      trustExitCode = true
+
+[merge]
+   tool = vimdiff
+    conflicstyle = diff3
+
+[mergetool]
+      prompt = false
+      trustExitCode = true
