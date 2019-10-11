@@ -38,6 +38,9 @@ umask 0077
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 if command -v fzf; then
+    # if fd is not available
+    #export FZF_DEFAULT_COMMAND="find . ! -name '*.swp' ! -name '.git'"
+    #export FZF_ALT_C_COMMAND="find"
     export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore --exclude .git --exclude *.swp"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_ALT_C_COMMAND="fd --type d"
