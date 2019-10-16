@@ -1,4 +1,5 @@
 #/usr/bin/env sh
+# may need to install fd
 trap 'echo && exit' SIGINT
 
 command -v git >/dev/null || { echo 'error: need git' >&2; exit; }

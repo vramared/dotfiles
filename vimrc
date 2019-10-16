@@ -1,10 +1,10 @@
-syntax on
 execute pathogen#infect()
 set rtp+=~/.fzf
 
 filetype plugin indent on
 syntax on
-colorscheme default
+colorscheme gruvbox
+set background=dark
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -95,3 +95,6 @@ let g:fzf_layout = { 'down': '~30%' }
 
 " fzf-mru.vim
 nnoremap <silent> <leader>m :FZFMru<CR>
+let g:go_highlight_trailing_whitespace_error=0
+set backspace=indent,eol,start
+set t_Co=256

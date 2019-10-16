@@ -23,9 +23,11 @@ export PS1="\[\e[93;1m\][\h:\W\[\$(git_prompt)\]]\\$ \[\e[m\]"
 export HISTCONTROL=ignoreboth:erasedups
 export LS_COLORS=$LS_COLORS':di=0;35:'
 export EDITOR="vim"
+export GOPATH=$HOME/go
 
 # Aliases
 alias v='vim'
+alias tmux='tmux -2'
 alias ls="ls -G"
 alias gs="git status"
 alias gd="git diff"
@@ -33,6 +35,8 @@ alias ga="git add"
 alias gc="git commit"
 alias gl="git log --oneline -20"
 alias gb="git branch"
+alias ucsc='ssh vramared@unix.ucsc.edu'
+alias py='python3'
 
 umask 0077
 
@@ -52,3 +56,4 @@ if command -v fzf; then
     bind "$(bind -s | grep '^"\\C-r"' | grep -v '\\C-m' | sed 's/^"\\C-r/\\C-f"/')"
     bind "$(bind -s | grep '^"\\C-r"' | grep -v '\\C-m' | sed 's/"$/\\C-m"/')"
 fi
+export PATH=$PATH:$HOME/.npm-global/bin
