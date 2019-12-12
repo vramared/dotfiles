@@ -1,4 +1,5 @@
 execute pathogen#infect()
+" hi
 set rtp+=~/.fzf
 
 filetype plugin indent on
