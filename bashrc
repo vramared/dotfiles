@@ -28,14 +28,13 @@ export GOPATH=$HOME/go
 # Aliases
 alias v='vim'
 alias tmux='tmux -2'
-alias ls="ls -G"
+alias ls="ls --color=auto"
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
 alias gl="git log --oneline -20"
 alias gb="git branch"
-alias ucsc='ssh vramared@unix.ucsc.edu'
 alias py='python3'
 
 umask 0077
@@ -43,11 +42,11 @@ umask 0077
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 if command -v fzf; then
     # if fd is not available
-    #export FZF_DEFAULT_COMMAND="find . ! -name '*.swp' ! -name '.git'"
-    #export FZF_ALT_C_COMMAND="find"
-    export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore --exclude .git --exclude *.swp"
+    export FZF_DEFAULT_COMMAND="find . ! -name '*.swp' ! -name '.git'"
+    export FZF_ALT_C_COMMAND="find"
+    #export FZF_DEFAULT_COMMAND="fd --hidden --no-ignore --exclude .git --exclude *.swp"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_ALT_C_COMMAND="fd --type d"
+    #export FZF_ALT_C_COMMAND="fd --type d"
     export FZF_DEFAULT_OPTS="
         --multi --no-reverse --inline-info
         --bind ctrl-f:page-down,ctrl-b:page-up"

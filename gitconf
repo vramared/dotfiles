@@ -1,14 +1,26 @@
+[user]
+	name = Vineet Ramareddi
+	email = vramared@soe.ucsc.edu
+
+[core]
+	edit = vim
+
 [diff]
-   tool = vimdiff
+    tool = vimdiff
 
 [difftool]
-      prompt = false
-      trustExitCode = true
+    prompt = false
+    trustExitCode = true
 
 [merge]
-   tool = vimdiff
+    tool = vimdiff
     conflicstyle = diff3
 
 [mergetool]
-      prompt = false
-      trustExitCode = true
+    prompt = false
+    trustExitCode = true
+
+[alias]
+    co = checkout
+[push]
+	default = matching
