@@ -1,3 +1,5 @@
+" Copyright 2020 - Usage of this vimrc is subject to copyright claims
+" I refuse the right to take your work and present it as mine
 execute pathogen#infect()
 set rtp+=~/.fzf
 
