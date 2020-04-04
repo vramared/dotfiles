@@ -1,12 +1,14 @@
-" Copyright 2020 - Usage of this vimrc is subject to copyright claims
-" I refuse the right to take your work and present it as mine
 execute pathogen#infect()
 set rtp+=~/.fzf
 
 filetype plugin indent on
 syntax on
+
+" colorscheme
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -17,7 +19,11 @@ set wildmode=longest:full,full
 set undodir=$HOME/.vim/undo
 set undofile
 set showcmd
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+    set clipboard=unnamed "Mac OS
+else
+    set clipboard=unnamedplus "Linux
+endif
 set number
 set relativenumber
 
@@ -25,7 +31,7 @@ set laststatus=2
 highlight StatusLine cterm=None ctermbg=DarkGrey ctermfg=White
 
 " white and grey line numbers
-highlight LineNr ctermfg=DarkGrey
+highlight LineNr ctermfg=White
 highlight CursorLineNr ctermfg=Yellow
 
 " jump to last position
@@ -42,11 +48,7 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" printf to/from fprintf
-map <F2> If<Esc>wastderr, <Esc>
-map <F3> 0wxwldwdw
-
-" map tabs
+" navigate vim tabs
 let mapleader = "\<Space>" 
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -58,29 +60,11 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 
-" run as python code
-" noremap <leader>p :w !python<CR>
-
-" open .cc/.hh
-set wildcharm=<tab>
-map <leader>c :vs <C-r>=expand('%:p')<CR><BS><BS>c<tab><CR>
-map <leader>h :vs <C-r>=expand('%:p')<CR><BS><BS>h<tab><CR>
-
-" open .log/.log.err
-map <leader>l :vs <C-r>=expand('%:p')<CR><BS><BS><BS><BS><CR>
-map <leader>e :vs <C-r>=expand('%:p')<CR>.err<CR>
-
-" goto file with vertical split
-nnoremap <C-w>f <C-w>f<C-w>L
-
 """""""""""
 " Plugins "
 """""""""""
 
-" tagbar  vim-sneak  vim-surround fzf.vim fzf-mru.vim
-
-" tagbar
-nmap <F8> :TagbarToggle<CR>
+" vim-sneak  vim-surround fzf.vim fzf-mru.vim
 
 " sneak
 let g:sneak#label = 1
@@ -97,6 +81,9 @@ let g:fzf_layout = { 'down': '~30%' }
 
 " fzf-mru.vim
 nnoremap <silent> <leader>m :FZFMru<CR>
+
 let g:go_highlight_trailing_whitespace_error=0
-set backspace=indent,eol,start
 set t_Co=256
+
+set backspace=2
+set tgc
